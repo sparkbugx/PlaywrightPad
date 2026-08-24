@@ -20,17 +20,34 @@ Fragile selectors, ambiguous assertions, and copy-paste test logic are the most 
 - **Readability as a requirement** — each spec reads like documentation of user behavior, so anyone (QA, developer, or stakeholder) can understand what is being verified and why.
 - **Proof over theory** — every pattern runs against real public practice pages ([playwrightpad.com](https://playwrightpad.com/practice/fill-actions/)) across Chromium, Firefox, and WebKit before being considered "learned."
 
-## What's Inside
+## Test Suite Catalog
 
-| Spec | Skill Demonstrated |
-| --- | --- |
-| `navigateToTargetPage.spec.ts` | Navigation and URL handling |
-| `veriyPageTittle.spec.ts` | Page metadata assertions |
-| `verifyTextElementIsVisible.spec.ts` | Visibility checks with web-first assertions |
-| `simulateButtonClick.spec.ts` | Actionability-aware interactions |
-| `fillOutFormTextInput.spec.ts` | Accessible locators (`getByLabel`) and value assertions |
-| `checkAndUncheckCheckbox.spec.ts` | Toggle state management |
-| `verifyPageUrl.spec.ts` | URL validation strategies |
+Every spec below exercises one isolated behavior on live practice pages hosted at [playwrightpad.com](https://playwrightpad.com/practice/basic-navigation/) and runs against all three browser engines on each execution.
+
+### Navigation & Page Metadata
+
+**`tests/navigateToTargetPage.spec.ts`**
+The suite's entry point. Validates that the browser reliably reaches the *Basic Navigation* practice module, exercising Playwright's navigation lifecycle (`page.goto`) with its built-in auto-waiting — the foundational flow every subsequent interaction builds upon.
+
+**`tests/veriyPageTittle.spec.ts`**
+A first-line integrity check that confirms the correct document has loaded by asserting the exact page title (*Practice: Basic Navigation*). Guards against misrouted deployments and content regressions surfacing at the highest level of the page.
+
+**`tests/verifyPageUrl.spec.ts`**
+Asserts that the final URL after navigation matches expectations, protecting against silent redirects, broken deep links, and unintended route rewrites.
+
+**`tests/verifyTextElementIsVisible.spec.ts`**
+Applies web-first visibility assertions (`toBeVisible`) to confirm critical UI elements actually render for the user — no fixed sleeps, no polling loops — demonstrating Playwright's actionability-aware waiting model.
+
+### User Interaction & Form Handling
+
+**`tests/simulateButtonClick.spec.ts`**
+Locates a control purely by its accessible name through role-based selectors (`getByRole`), performs a genuine click, and verifies the application's visible feedback in response. Showcases accessibility-first locating paired with event-driven outcome verification.
+
+**`tests/fillOutFormTextInput.spec.ts`**
+Drives a realistic data-entry flow: populates a text field and confirms the submitted value persists correctly (`toHaveValue`). Illustrates dependable input simulation and post-action state validation.
+
+**`tests/checkAndUncheckCheckbox.spec.ts`**
+Targets boolean form controls — checking and unchecking while asserting the resulting state transitions. *(Currently in active development.)*
 
 ## Key Practices Applied
 
