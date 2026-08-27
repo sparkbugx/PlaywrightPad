@@ -6,9 +6,9 @@ test('locating images by alt text (TypeScript)', async ({ page }) => {
     await page.goto('https://www3.anikai.cc/home');
     // Step 2: Locate logo: page.getByAltText('Playwright Logo').
     // TODO: Write your code here
-    await expect(page.getByAltText('Thunder 3')).toBeVisible();
-
+    const logo = page.getByAltText('Tomb Raider King');
     // Step 3: Assert visibility.
     // TODO: Write your code here
-
+    await expect(logo).toBeVisible();
+    await (logo).click();
 });
