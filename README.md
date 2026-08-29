@@ -122,4 +122,24 @@ A GitHub Actions workflow (`.github/workflows/playwright.yml`) runs the entire m
 
 ---
 
-Built as an ongoing study in test craftsmanship — clone it, break it, improve it.
+# Playwright Report Enhancements — TODO
+
+> 7 ways to take the generated HTML report from "raw log" to a decision-ready dashboard.
+> Plan only — each item will be checked off as it gets implemented.
+
+1. [ ] **Smarter filtering** — Don't drown in data. Add filters to highlight failed, flaky, or skipped tests so teams focus on what matters, cutting cognitive load and pointing attention straight at problem areas instead of endless passes.
+
+2. [ ] **Custom metadata & insights** — Attach build tags, environments, or feature labels to each run. This turns reports from raw logs into contextual stories, letting teams trace failures back to specific releases or modules instantly.
+
+3. [ ] **Visual clarity with charts** — Numbers alone don't tell the full story. Add trend charts, pie breakdowns, or heatmaps to visualize failure patterns, so a quick glance reveals whether issues are isolated or systemic.
+
+4. [ ] **Actionable grouping** — Group results by feature, module, or user journey. Instead of "20 failed tests," you see "Checkout flow failing in 3 modules," which directs fixes faster.
+
+5. [ ] **Flaky test detection** — Highlight tests that fail intermittently across runs. Flaky tests erode trust in automation; flagging them helps teams prioritize stabilization and restore confidence in the suite.
+
+6. [ ] **Cross-team accessibility** — Reports shouldn't be locked to QA. Share enriched dashboards with devs, product managers, and business stakeholders. When everyone sees the same insights, alignment and accountability improve.
+
+7. [ ] **Continuous improvement loop** — Treat reports as feedback engines. Use their insights to refine test design, enhance coverage, and sharpen the automation strategy. Reports aren't just outputs — they're inputs for smarter QA.
+
+
+Locator Chaining basics

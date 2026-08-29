@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "test:chromium": "node scripts/run-tests.mjs --project=chromium"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sparkbugx/PlaywrightPad.git"
