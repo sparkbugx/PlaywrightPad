@@ -28,3 +28,5 @@ test('locator chaining basics (TypeScript)', async ({ page }) => {
 // for testing
 //https://qaplayground.com/bank/dashboard
   //  https://playwrightpad.com/workspace/locator-mastery/loc-mas-010
+
+//tjes this is not completed
