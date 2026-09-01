@@ -26,3 +26,5 @@ test('locator chaining basics (TypeScript)', async ({ page }) => {
 
 //Chaining basics needs to be improves and i need to make sure to find first the correct element
 // for testing
+//https://qaplayground.com/bank/dashboard
+  //  https://playwrightpad.com/workspace/locator-mastery/loc-mas-010

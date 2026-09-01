@@ -113,6 +113,10 @@ Defined in [`playwright.config.ts`](playwright.config.ts):
 
 A GitHub Actions workflow (`.github/workflows/playwright.yml`) runs the entire matrix on every push and pull request to `main`/`master`: install dependencies → install browsers with system deps → execute all tests. Green badge at the top of this file reflects the current state of the suite.
 
+## Practice Resources
+
+See **[RESOURCES.md](RESOURCES.md)** for a curated list of demo websites and APIs to practice test automation against — covering iFrames, modals, dynamic content, file uploads, and more.
+
 ## Roadmap Ideas
 
 - [ ] Fixtures and Page Object Model refactorings
