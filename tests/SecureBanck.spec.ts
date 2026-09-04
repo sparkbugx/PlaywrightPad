@@ -62,3 +62,6 @@ test('Verify Total Balance  Display', async ({page}) =>{
     console.log(`The total sum of all accounts is: ${calculatedTotalSum}`)
 
 });
+
+
+//Secure Bank links now are different furtehr review is requiere
