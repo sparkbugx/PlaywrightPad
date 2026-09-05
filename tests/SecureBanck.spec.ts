@@ -64,4 +64,4 @@ test('Verify Total Balance  Display', async ({page}) =>{
 });
 
 
-//Secure Bank links now are different furtehr review is requiere
+//Then new link has beeen updated
