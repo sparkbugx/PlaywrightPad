@@ -63,5 +63,3 @@ test('Verify Total Balance  Display', async ({page}) =>{
 
 });
 
-
-//Then new link has beeen updated
