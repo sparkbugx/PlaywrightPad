@@ -67,8 +67,20 @@ test ("Verify Recent Transactions Widget", async ({page}) => {
     await page.getByTestId('sidebar-link-transfer').click();
     await expect(page).toHaveURL(/bank\/transactions/);
 
-    const rows = page.getByTestId('all-txn-row');
+    const rows = page.getByTestId('allop-txn-row');
 
     const count = await rows.count();
+    console.log(`Number of transactions present: ${count}`);
 
+    for(let i = 0; i< count; i ++){
+        const row = rows.nth(i);
+        await expect(row.getByTestId('all-txn-date')).toBeVisible();
+        await expect(row.locator('td').nth(1)).toBeVisible();
+        await expect(row.getByTestId('all-txn-description')).toBeVisible();
+        await expect(row.getByTestId('all-txn-category-badge')).toBeVisible();
+
+        const amount = row.getByTestId('all-txn-amount');
+        await expect(amount).toBeVisible();
+        await expect(amount).toHaveAttribute("data-amount", /.+/);
+    }
 })
