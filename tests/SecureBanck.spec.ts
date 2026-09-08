@@ -64,5 +64,11 @@ test('Verify Total Balance  Display', async ({page}) =>{
 });
 
 test ("Verify Recent Transactions Widget", async ({page}) => {
-    await page.getByTestId('data-testid="sidebar-link-transfer"').click();
+    await page.getByTestId('sidebar-link-transfer').click();
+    await expect(page).toHaveURL(/bank\/transactions/);
+
+    const rows = page.getByTestId('all-txn-row');
+
+    const count = await rows.count();
+
 })
