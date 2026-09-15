@@ -63,27 +63,40 @@ test('Verify Total Balance  Display', async ({page}) =>{
 
 });
 
-test ("Verify Recent Transactions Widget", async ({page}) => {
-    await page.getByTestId('sidebar-link-transfer').click();
-    await expect(page).toHaveURL(/bank\/transactions/);
+test("Verify Recent Transactions Widget", async ({page}) => {
+    await expect(page).toHaveURL(/bank\/dashboard/);
+    await expect(page.getByRole('heading', { name: /recent transactions/i})).toBeVisible();
 
-    const rows = page.getByTestId('allop-txn-row');
+    const rows = page.getByTestId('allop-txn-row')
+    await rows.first().waitFor();
 
     const count = await rows.count();
-    console.log(`Number of transactions present: ${count}`);
+    console.log(`Recent Transactions Widget: ${count}`);
 
-    for(let i = 0; i< count; i ++){
+    expect(count).toBeGreaterThan(0);
+    expect(count).toBeLessThanOrEqual(5);
+
+    for(let i = 0; i < count; i++){
         const row = rows.nth(i);
-        await expect(row.getByTestId('all-txn-date')).toBeVisible();
-        await expect(row.locator('td').nth(1)).toBeVisible();
+        await expect(row.getByTestId('all-txt-date')).toBeVisible();
         await expect(row.getByTestId('all-txn-description')).toBeVisible();
         await expect(row.getByTestId('all-txn-category-badge')).toBeVisible();
 
         const amount = row.getByTestId('all-txn-amount');
         await expect(amount).toBeVisible();
-        await expect(amount).toHaveAttribute("data-amount", /.+/);
+        await expect(amount).toHaveAttribute('data-amount', /.+/);
     }
 })
 
 
-// multiple error url needs to be fixed + the domain may need to be changed
+
+
+
+
+
+
+
+
+
+
+
