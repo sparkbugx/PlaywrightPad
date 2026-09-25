@@ -92,14 +92,6 @@ test("Verify Recent Transactions Widget", async ({page}) => {
 
 
 
-//test cases for the accounts page
-
-
-
-
-
-
-
 
 
 
