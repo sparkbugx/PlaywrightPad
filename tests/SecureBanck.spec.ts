@@ -91,11 +91,3 @@ test("Verify Recent Transactions Widget", async ({page}) => {
 
 
 
-//fargan updates
-
-
-//Golft updates server
-
-
-
-
