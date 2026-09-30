@@ -62,7 +62,7 @@ test('Verify Total Balance  Display', async ({page}) =>{
     console.log(`The total sum of all accounts is: ${calculatedTotalSum}`)
 
 });
-
+//the changes are not working 
 test("Verify Recent Transactions Widget", async ({page}) => {
     await expect(page).toHaveURL(/bank\/dashboard/);
     await expect(page.getByRole('heading', { name: /recent transactions/i})).toBeVisible();
@@ -87,8 +87,3 @@ test("Verify Recent Transactions Widget", async ({page}) => {
         await expect(amount).toHaveAttribute('data-amount', /.+/);
     }
 })
-
-
-
-// some changes are no5 wo4rking
-
