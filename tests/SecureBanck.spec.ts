@@ -67,8 +67,8 @@ test("Verify Recent Transactions Widget", async ({page}) => {
     await expect(page).toHaveURL(/bank\/dashboard/);
     await expect(page.getByRole('heading', { name: /recent transactions/i})).toBeVisible();
 
-    const rows = page.getByTestId('allop-txn-row')
-    await rows.first().waitFor();
+    const rows = page.getByTestId('allop-txn-row');
+    await rows.first().waitFor({ state: 'attached' });
 
     const count = await rows.count();
     console.log(`Recent Transactions Widget: ${count}`);
