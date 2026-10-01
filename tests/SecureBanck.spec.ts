@@ -4,10 +4,19 @@ import * as path from 'path';
 
 
 dotenv.config({path: path.resolve(__dirname, '..', '.env')});
+
+function requireEnv(name: string): string {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(`Missing required environment variable "${name}". Add it to your .env file.`);
+    }
+    return value;
+}
+
 //variables
-const userName = process.env.TEST_USER;
-const passwordUser = process.env.TEST_PASSWORD;
-const TestUrl = process.env.TEST_URL;
+const userName = requireEnv('TEST_USER');
+const passwordUser = requireEnv('TEST_PASSWORD');
+const TestUrl = requireEnv('TEST_URL');
 
 
 
