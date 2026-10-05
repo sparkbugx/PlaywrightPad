@@ -144,9 +144,3 @@ See **[RESOURCES.md](RESOURCES.md)** for a curated list of demo websites and API
 6. [ ] **Cross-team accessibility** — Reports shouldn't be locked to QA. Share enriched dashboards with devs, product managers, and business stakeholders. When everyone sees the same insights, alignment and accountability improve.
 
 7. [ ] **Continuous improvement loop** — Treat reports as feedback engines. Use their insights to refine test design, enhance coverage, and sharpen the automation strategy. Reports aren't just outputs — they're inputs for smarter QA.
-
-
-Locator Chaining basics
-
-
-Pending//Selecting the Nth Match
